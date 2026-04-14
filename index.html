@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truyền thông Biển đảo Việt Nam</title>
+    <title>Truyền thông về Biển đảo Việt Nam</title>
     <style>
-        /* Loại bỏ khoảng trắng mặc định của trình duyệt */
+        /* Xóa bỏ khoảng trắng và chặn thanh cuộn */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        body, html {
+            width: 100%;
+            height: 100%;
             background: #e0f4f9;
+            overflow: hidden;
             display: flex;
-            justify-content: center; /* Căn giữa ngang */
-            align-items: center;     /* Căn giữa dọc */
-            min-height: 100vh;       /* Chiều cao bằng toàn bộ màn hình */
-            overflow: hidden;        /* Ẩn thanh cuộn nếu muốn ảnh vừa khít */
+            justify-content: center;
+            align-items: center;
         }
 
         .infographic-wrapper {
-            position: relative;
-            width: 100vw;            /* Rộng bằng 100% chiều rộng màn hình */
-            height: 100vh;           /* Cao bằng 100% chiều cao màn hình */
+            width: 100vw;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         img {
-            /* Các thuộc tính giúp ảnh bao phủ toàn màn hình */
-            width: 100%;
-            height: 100%;
-            object-fit: contain;    /* Giữ nguyên tỷ lệ ảnh để không bị méo */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Giữ tỷ lệ ảnh đẹp nhất trên mọi màn hình */
             display: block;
         }
 
         area {
             outline: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -49,18 +49,18 @@
     <img src="image.jpg" usemap="#infographic-map" id="info-img">
 
     <map name="infographic-map">
-        <area shape="rect" coords="30,250,200,450" alt="Nhận thức" href="https://vtv.vn/bien-dao-viet-nam.tag" target="_blank">
-        <area shape="rect" coords="215,250,385,450" alt="Chủ quyền" href="https://biendao.gov.vn/" target="_blank">
-        <area shape="rect" coords="30,530,200,730" alt="Kinh tế" href="https://www.youtube.com/results?search_query=kinh+tế+biển+việt+nam" target="_blank">
-        <area shape="rect" coords="215,530,385,730" alt="Cộng đồng" href="https://www.google.com/search?q=gắn+kết+cộng+đồng+biển+đảo" target="_blank">
+        <area shape="rect" coords="60,250,400,500" alt="Nhận thức" href="https://vtv.vn/bien-dao-viet-nam.tag" target="_blank">
+        <area shape="rect" coords="430,250,770,500" alt="Chủ quyền" href="https://biendao.gov.vn/" target="_blank">
+        <area shape="rect" coords="60,540,400,800" alt="Kinh tế" href="https://www.youtube.com/results?search_query=phát+triển+kinh+tế+biển+việt+nam" target="_blank">
+        <area shape="rect" coords="430,540,770,800" alt="Cộng đồng" href="https://www.google.com/search?q=gắn+kết+cộng+đồng+biển+đảo" target="_blank">
 
-        <area shape="circle" coords="610,480,40" alt="Hoàng Sa" href="https://vi.wikipedia.org/wiki/Quần_đảo_Hoàng_Sa" target="_blank">
-        <area shape="circle" coords="610,710,40" alt="Trường Sa" href="https://vi.wikipedia.org/wiki/Quần_đảo_Trường_Sa" target="_blank">
+        <area shape="circle" coords="1280,470,60" alt="Hoàng Sa" href="https://vi.wikipedia.org/wiki/Quần_đảo_Hoàng_Sa" target="_blank">
+        <area shape="circle" coords="1240,730,60" alt="Trường Sa" href="https://vi.wikipedia.org/wiki/Quần_đảo_Trường_Sa" target="_blank">
 
-        <area shape="rect" coords="630,240,970,390" alt="Thông tin" href="https://vtv.vn/truyen-hinh.htm" target="_blank">
-        <area shape="rect" coords="630,410,970,530" alt="Hoạt động" href="https://www.youtube.com/results?search_query=triển+lãm+biển+đảo" target="_blank">
-        <area shape="rect" coords="630,550,970,700" alt="Số" href="https://www.tiktok.com/search?q=biển+đảo+việt+nam" target="_blank">
-        <area shape="rect" coords="630,720,970,850" alt="Nội dung" href="https://www.google.com/search?q=lịch+sử+pháp+lý+biển+đảo+việt+nam" target="_blank">
+        <area shape="rect" coords="1330,240,1980,390" alt="Thông tin" href="https://vtv.vn/truyen-hinh.htm" target="_blank">
+        <area shape="rect" coords="1330,410,1980,540" alt="Hoạt động" href="https://www.youtube.com/results?search_query=triển+lãm+biển+đảo" target="_blank">
+        <area shape="rect" coords="1330,560,1980,710" alt="Truyền thông số" href="https://www.tiktok.com/search?q=biển+đảo+việt+nam" target="_blank">
+        <area shape="rect" coords="1330,730,1980,870" alt="Nội dung" href="https://www.google.com/search?q=lịch+sử+pháp+lý+biển+đảo+việt+nam" target="_blank">
     </map>
 </div>
 
@@ -68,6 +68,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
 <script>
     $(document).ready(function(e) {
+        // Kích hoạt tính năng tự động tính lại tọa độ (Responsive)
         $('img[usemap]').rwdImageMaps();
     });
 </script>
