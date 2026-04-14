@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>truyền thông về biển đảo việt nam</title>
+    <title>Truyền thông về Biển đảo Việt Nam</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px;
             background: #e0f4f9;
             display: flex;
             justify-content: center;
@@ -18,25 +18,22 @@
         .infographic-wrapper {
             position: relative;
             box-shadow: 0 10px 50px rgba(0,0,0,0.3);
-            line-height: 0;
             border-radius: 15px;
             overflow: hidden;
+            max-width: 1000px; /* Khớp với chiều rộng ảnh gốc của bạn */
         }
         img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             display: block;
         }
-        /* Hiệu ứng phản hồi khi di chuột vào vùng nhấn (tùy chọn) */
-        area {
-            cursor: pointer;
-        }
+        area { outline: none; }
     </style>
 </head>
 <body>
 
 <div class="infographic-wrapper">
-    <img src="image.jpg" usemap="#infographic-map" alt="Truyền thông biển đảo Việt Nam">
+    <img src="image.jpg" usemap="#infographic-map" id="info-img">
 
     <map name="infographic-map">
         <area shape="rect" coords="30,250,200,450" alt="Nhận thức" href="https://vtv.vn/bien-dao-viet-nam.tag" target="_blank">
@@ -54,11 +51,11 @@
     </map>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    // Đoạn code này giúp các vùng nhấn tự động co giãn theo kích thước ảnh (Responsive)
-    window.addEventListener('resize', function() {
-        // Bạn có thể dùng thư viện RWD Image Maps để làm phần này hoàn hảo hơn
-        // Ở đây mình để tọa độ pixel chuẩn theo ảnh gốc 1000px width.
+    $(document).ready(function(e) {
+        $('img[usemap]').rwdImageMaps();
     });
 </script>
 
