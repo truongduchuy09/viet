@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truyền Thông Biển Đảo Việt Nam</title>
+    <style>
+        :root {
+            --primary-blue: #004a99;
+            --ocean-blue: #0077be;
+            --sand-yellow: #f4d03f;
+            --text-light: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--ocean-blue));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border-bottom: 5px solid var(--ocean-blue);
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            background-color: #e6f3ff;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TRUYỀN THÔNG BIỂN ĐẢO VIỆT NAM</h1>
+        <p>Bảo vệ chủ quyền - Phát triển bền vững - Gắn kết cộng đồng</p>
+    </header>
+
+    <div class="container">
+        <a href="https://www.youtube.com/results?search_query=bằng+chứng+lịch+sử+chủ+quyền+biển+đảo+việt+nam" target="_blank" class="card">
+            <div class="icon">📜</div>
+            <h3>Lịch sử & Pháp lý</h3>
+            <p>Khám phá các tư liệu, bản đồ cổ và căn cứ pháp lý khẳng định chủ quyền của Việt Nam đối với hai quần đảo Hoàng Sa và Trường Sa.</p>
+        </a>
+
+        <a href="https://vtv.vn/tim-kiem.htm?keywords=kinh+tế+biển" target="_blank" class="card">
+            <div class="icon">🚢</div>
+            <h3>Phát triển Kinh tế</h3>
+            <p>Tiềm năng từ đánh bắt thủy hải sản, du lịch biển bền vững và các hải cảng chiến lược trong phát triển đất nước.</p>
+        </a>
+
+        <a href="https://www.google.com/search?tbm=isch&q=đời+sống+chiến+sĩ+trường+sa" target="_blank" class="card">
+            <div class="icon">⚓</div>
+            <h3>Đời sống Chiến sĩ</h3>
+            <p>Hình ảnh và video về cuộc sống, tinh thần lạc quan và ý chí kiên cường của các chiến sĩ nơi đầu sóng ngọn gió.</p>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=bảo+tồn+san+hô+biển+việt+nam" target="_blank" class="card">
+            <div class="icon">🌊</div>
+            <h3>Tài nguyên & Môi trường</h3>
+            <p>Truyền thông về việc bảo vệ hệ sinh thái san hô, giảm thiểu rác thải nhựa và bảo vệ nguồn lợi tài nguyên biển.</p>
+        </a>
+
+        <a href="https://baochinhphu.vn/bien-dao-viet-nam.tag" target="_blank" class="card">
+            <div class="icon">🎨</div>
+            <h3>Sự kiện & Văn hóa</h3>
+            <p>Các cuộc thi tìm hiểu, triển lãm tranh ảnh và các chương trình nghệ thuật hướng về biển đảo quê hương.</p>
+        </a>
+
+        <a href="https://www.tiktok.com/search?q=biển+đảo+việt+nam" target="_blank" class="card">
+            <div class="icon">📱</div>
+            <h3>Truyền thông Số</h3>
+            <p>Sức mạnh của mạng xã hội, video ngắn và Infographic trong việc lan tỏa tình yêu biển đảo đến thế hệ trẻ.</p>
+        </a>
+    </div>
+
+    <footer>
+        CHUNG TAY VÌ BIỂN ĐẢO QUÊ HƯƠNG!
+    </footer>
+
+</body>
+</html>
