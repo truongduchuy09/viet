@@ -3,31 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truyền thông về Biển đảo Việt Nam</title>
+    <title>Truyền thông Biển đảo Việt Nam</title>
     <style>
-        body {
+        /* Loại bỏ khoảng trắng mặc định của trình duyệt */
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             background: #e0f4f9;
+            display: flex;
+            justify-content: center; /* Căn giữa ngang */
+            align-items: center;     /* Căn giữa dọc */
+            min-height: 100vh;       /* Chiều cao bằng toàn bộ màn hình */
+            overflow: hidden;        /* Ẩn thanh cuộn nếu muốn ảnh vừa khít */
+        }
+
+        .infographic-wrapper {
+            position: relative;
+            width: 100vw;            /* Rộng bằng 100% chiều rộng màn hình */
+            height: 100vh;           /* Cao bằng 100% chiều cao màn hình */
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            font-family: sans-serif;
         }
-        .infographic-wrapper {
-            position: relative;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
-            border-radius: 15px;
-            overflow: hidden;
-            max-width: 1000px; /* Khớp với chiều rộng ảnh gốc của bạn */
-        }
+
         img {
+            /* Các thuộc tính giúp ảnh bao phủ toàn màn hình */
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: contain;    /* Giữ nguyên tỷ lệ ảnh để không bị méo */
             display: block;
         }
-        area { outline: none; }
+
+        area {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -51,8 +64,8 @@
     </map>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
 <script>
     $(document).ready(function(e) {
         $('img[usemap]').rwdImageMaps();
