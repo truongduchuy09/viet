@@ -3,135 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truyền Thông Biển Đảo Việt Nam</title>
+    <title>Infographic Truyền Thông Biển Đảo</title>
     <style>
         :root {
-            --primary-blue: #004a99;
-            --ocean-blue: #0077be;
-            --sand-yellow: #f4d03f;
-            --text-light: #ffffff;
+            --primary-blue: #1a4b8c;
+            --light-blue: #e3f2fd;
+            --accent-red: #d32f2f;
+            --text-color: #333;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0faff;
             margin: 0;
             padding: 20px;
             display: flex;
+            justify-content: center;
+        }
+
+        .infographic-container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .header p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Main Content Layout */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        /* Columns */
+        .column {
+            flex: 1;
+            z-index: 2;
+        }
+
+        /* Map in Center */
+        .map-center {
+            flex: 1;
+            display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .map-img {
+            width: 100%;
+            max-width: 300px;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
         }
 
-        header {
-            background: linear-gradient(135deg, var(--primary-blue), var(--ocean-blue));
+        /* Section Titles */
+        .section-title {
+            background: var(--primary-blue);
             color: white;
-            padding: 30px;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-title.red { background: var(--accent-red); }
+
+        /* Item Cards */
+        .item-card {
+            background: var(--light-blue);
             border-radius: 15px;
-            text-align: center;
-            width: 100%;
-            max-width: 1000px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            margin-bottom: 30px;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 1000px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            border-bottom: 5px solid var(--ocean-blue);
-            text-decoration: none;
-            color: #333;
-            display: block;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            background-color: #e6f3ff;
-        }
-
-        .icon {
-            font-size: 50px;
+            padding: 15px;
             margin-bottom: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 2px solid transparent;
         }
 
-        h3 {
+        .item-card:hover {
+            transform: scale(1.05);
+            background: white;
+            border-color: var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .icon-box {
+            font-size: 2rem;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .item-text h3 {
+            margin: 0;
+            font-size: 1rem;
             color: var(--primary-blue);
-            margin-bottom: 10px;
         }
-
-        p {
-            font-size: 0.9rem;
-            line-height: 1.5;
+        .item-text p {
+            margin: 5px 0 0;
+            font-size: 0.85rem;
             color: #666;
         }
 
-        footer {
-            margin-top: 50px;
-            color: var(--primary-blue);
+        /* Footer Banner */
+        .footer-banner {
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 30px;
             font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .content { flex-direction: column; }
+            .map-center { order: -1; margin-bottom: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>TRUYỀN THÔNG BIỂN ĐẢO VIỆT NAM</h1>
-        <p>Bảo vệ chủ quyền - Phát triển bền vững - Gắn kết cộng đồng</p>
-    </header>
-
-    <div class="container">
-        <a href="https://www.youtube.com/results?search_query=bằng+chứng+lịch+sử+chủ+quyền+biển+đảo+việt+nam" target="_blank" class="card">
-            <div class="icon">📜</div>
-            <h3>Lịch sử & Pháp lý</h3>
-            <p>Khám phá các tư liệu, bản đồ cổ và căn cứ pháp lý khẳng định chủ quyền của Việt Nam đối với hai quần đảo Hoàng Sa và Trường Sa.</p>
-        </a>
-
-        <a href="https://vtv.vn/tim-kiem.htm?keywords=kinh+tế+biển" target="_blank" class="card">
-            <div class="icon">🚢</div>
-            <h3>Phát triển Kinh tế</h3>
-            <p>Tiềm năng từ đánh bắt thủy hải sản, du lịch biển bền vững và các hải cảng chiến lược trong phát triển đất nước.</p>
-        </a>
-
-        <a href="https://www.google.com/search?tbm=isch&q=đời+sống+chiến+sĩ+trường+sa" target="_blank" class="card">
-            <div class="icon">⚓</div>
-            <h3>Đời sống Chiến sĩ</h3>
-            <p>Hình ảnh và video về cuộc sống, tinh thần lạc quan và ý chí kiên cường của các chiến sĩ nơi đầu sóng ngọn gió.</p>
-        </a>
-
-        <a href="https://www.youtube.com/results?search_query=bảo+tồn+san+hô+biển+việt+nam" target="_blank" class="card">
-            <div class="icon">🌊</div>
-            <h3>Tài nguyên & Môi trường</h3>
-            <p>Truyền thông về việc bảo vệ hệ sinh thái san hô, giảm thiểu rác thải nhựa và bảo vệ nguồn lợi tài nguyên biển.</p>
-        </a>
-
-        <a href="https://baochinhphu.vn/bien-dao-viet-nam.tag" target="_blank" class="card">
-            <div class="icon">🎨</div>
-            <h3>Sự kiện & Văn hóa</h3>
-            <p>Các cuộc thi tìm hiểu, triển lãm tranh ảnh và các chương trình nghệ thuật hướng về biển đảo quê hương.</p>
-        </a>
-
-        <a href="https://www.tiktok.com/search?q=biển+đảo+việt+nam" target="_blank" class="card">
-            <div class="icon">📱</div>
-            <h3>Truyền thông Số</h3>
-            <p>Sức mạnh của mạng xã hội, video ngắn và Infographic trong việc lan tỏa tình yêu biển đảo đến thế hệ trẻ.</p>
-        </a>
+<div class="infographic-container">
+    <div class="header">
+        <h1>Truyền thông về biển đảo Việt Nam</h1>
+        <p>BẢO VỆ CHỦ QUYỀN VÀ PHÁT TRIỂN BỀN VỮNG</p>
     </div>
 
-    <footer>
+    <div class="content">
+        <div class="column">
+            <div class="section-title">MỤC TIÊU TRUYỀN THÔNG</div>
+            
+            <a href="https://www.youtube.com/results?search_query=tăng+cường+nhận+thức+biển+đảo" target="_blank" class="item-card">
+                <div class="icon-box">📢</div>
+                <div class="item-text">
+                    <h3>Tăng cường nhận thức</h3>
+                    <p>Về vị trí, vai trò của biển và chủ quyền quốc gia.</p>
+                </div>
+            </a>
+
+            <a href="https://vtv.vn/chu-quyen-bien-dao.html" target="_blank" class="item-card">
+                <div class="icon-box">🛡️</div>
+                <div class="item-text">
+                    <h3>Bảo vệ chủ quyền</h3>
+                    <p>Về quyền chủ quyền và hợp tác quốc tế.</p>
+                </div>
+            </a>
+
+            <a href="https://www.google.com/search?q=phát+triển+kinh+tế+biển+việt+nam" target="_blank" class="item-card">
+                <div class="icon-box">🚢</div>
+                <div class="item-text">
+                    <h3>Phát triển kinh tế biển</h3>
+                    <p>Thủy hải sản, du lịch biển và hệ thống cảng biển.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="map-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Vietnam_location_map.svg/500px-Vietnam_location_map.svg.png" alt="Bản đồ Việt Nam" class="map-img">
+            <div style="font-weight: bold; color: var(--accent-red); margin-top: 10px;">HOÀNG SA & TRƯỜNG SA</div>
+        </div>
+
+        <div class="column">
+            <div class="section-title red">PHƯƠNG THỨC & NỘI DUNG</div>
+            
+            <a href="https://baochinhphu.vn/" target="_blank" class="item-card">
+                <div class="icon-box">📺</div>
+                <div class="item-text">
+                    <h3>Phương tiện thông tin</h3>
+                    <p>Tin tức, phóng sự, truyền hình và báo chí trực tuyến.</p>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/hashtag/biendaovietnam" target="_blank" class="item-card">
+                <div class="icon-box">📱</div>
+                <div class="item-text">
+                    <h3>Truyền thông số</h3>
+                    <p>Mạng xã hội, video ngắn, Blog và Infographic.</p>
+                </div>
+            </a>
+
+            <a href="https://www.youtube.com/results?search_query=lịch+sử+biển+đảo+việt+nam" target="_blank" class="item-card">
+                <div class="icon-box">📖</div>
+                <div class="item-text">
+                    <h3>Nội dung chính</h3>
+                    <p>Lịch sử, bằng chứng pháp lý và tài nguyên thiên nhiên.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-banner">
         CHUNG TAY VÌ BIỂN ĐẢO QUÊ HƯƠNG!
-    </footer>
+    </div>
+</div>
 
 </body>
 </html>
