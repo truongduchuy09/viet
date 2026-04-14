@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truyền thông về Biển đảo Việt Nam</title>
+    <title>Biển Đảo Việt Nam </title>
     <style>
-        /* Xóa bỏ khoảng trắng và chặn thanh cuộn */
+        /* Xóa khoảng trắng thừa và tràn màn hình */
         * {
             margin: 0;
             padding: 0;
@@ -15,14 +15,14 @@
         body, html {
             width: 100%;
             height: 100%;
-            background: #e0f4f9;
-            overflow: hidden;
+            background-color: #e0f4f9;
+            overflow: hidden; /* Ẩn thanh cuộn */
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .infographic-wrapper {
+        .container {
             width: 100vw;
             height: 100vh;
             display: flex;
@@ -33,7 +33,7 @@
         img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* Giữ tỷ lệ ảnh đẹp nhất trên mọi màn hình */
+            object-fit: contain; /* Giữ tỷ lệ áp phích */
             display: block;
         }
 
@@ -45,22 +45,19 @@
 </head>
 <body>
 
-<div class="infographic-wrapper">
-    <img src="image.jpg" usemap="#infographic-map" id="info-img">
+<div class="container">
+    <img src="image.jpg" usemap="#image-map" id="poster">
 
-    <map name="infographic-map">
-        <area shape="rect" coords="60,250,400,500" alt="Nhận thức" href="https://vtv.vn/bien-dao-viet-nam.tag" target="_blank">
-        <area shape="rect" coords="430,250,770,500" alt="Chủ quyền" href="https://biendao.gov.vn/" target="_blank">
-        <area shape="rect" coords="60,540,400,800" alt="Kinh tế" href="https://www.youtube.com/results?search_query=phát+triển+kinh+tế+biển+việt+nam" target="_blank">
-        <area shape="rect" coords="430,540,770,800" alt="Cộng đồng" href="https://www.google.com/search?q=gắn+kết+cộng+đồng+biển+đảo" target="_blank">
-
-        <area shape="circle" coords="1280,470,60" alt="Hoàng Sa" href="https://vi.wikipedia.org/wiki/Quần_đảo_Hoàng_Sa" target="_blank">
-        <area shape="circle" coords="1240,730,60" alt="Trường Sa" href="https://vi.wikipedia.org/wiki/Quần_đảo_Trường_Sa" target="_blank">
-
-        <area shape="rect" coords="1330,240,1980,390" alt="Thông tin" href="https://vtv.vn/truyen-hinh.htm" target="_blank">
-        <area shape="rect" coords="1330,410,1980,540" alt="Hoạt động" href="https://www.youtube.com/results?search_query=triển+lãm+biển+đảo" target="_blank">
-        <area shape="rect" coords="1330,560,1980,710" alt="Truyền thông số" href="https://www.tiktok.com/search?q=biển+đảo+việt+nam" target="_blank">
-        <area shape="rect" coords="1330,730,1980,870" alt="Nội dung" href="https://www.google.com/search?q=lịch+sử+pháp+lý+biển+đảo+việt+nam" target="_blank">
+    <map name="image-map">
+        <area target="_blank" alt="nhận thức" title="nhận thức" href="https://www.youtube.com/" coords="30,172,487,284" shape="rect">
+        <area target="_blank" alt="chủ quyền" title="chủ quyền" href="https://www.youtube.com/" coords="31,289,489,403" shape="rect">
+        <area target="_blank" alt="kinh tế" title="kinh tế" href="https://www.youtube.com/" coords="31,417,486,525" shape="rect">
+        <area target="_blank" alt="cộng đồng" title="cộng đồng" href="https://www.youtube.com/" coords="32,542,485,650" shape="rect">
+        
+        <area target="_blank" alt="nội dung" title="nội dung" href="https://www.youtube.com/" coords="919,175,1356,272" shape="rect">
+        <area target="_blank" alt="giáo dục và cộng đồng" title="giáo dục và cộng đồng" href="https://www.youtube.com/" coords="919,299,1360,399" shape="rect">
+        <area target="_blank" alt="truyền thong" title="truyền thong" href="https://www.youtube.com/" coords="919,420,1359,524" shape="rect">
+        <area target="_blank" alt="văn hoá" title="văn hoá" href="https://www.youtube.com/" coords="921,543,1353,649" shape="rect">
     </map>
 </div>
 
@@ -68,7 +65,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
 <script>
     $(document).ready(function(e) {
-        // Kích hoạt tính năng tự động tính lại tọa độ (Responsive)
+        // Lệnh kích hoạt tính năng tự căn chỉnh tọa độ
         $('img[usemap]').rwdImageMaps();
     });
 </script>
